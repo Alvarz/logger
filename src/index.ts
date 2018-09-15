@@ -1,6 +1,6 @@
 import Logger from './Logger'; 
 
-
+/*
 function getErrorObject(){
   try {
     throw Error('') 
@@ -22,4 +22,4 @@ function testLogger(){
 testLogger();
 
 
-
+ */
