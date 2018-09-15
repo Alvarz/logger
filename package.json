@@ -1,6 +1,6 @@
 {
   "name": "@beardedframework/logger",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "A great logger for bearded",
   "main": "index.js",
   "scripts": {
@@ -36,7 +36,6 @@
     "typescript": "2.3.3",
     "typescript-eslint-parser": "3.0.0"
   },
-
   "repository": {
     "type": "git",
     "url": "git+https://github.com/BeardedFramework/logger"
