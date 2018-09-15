@@ -101,7 +101,7 @@ export default class Logger {
    *
    * @return
    * */
-  private static logToFile(msg : string,   errTop = null){
+  private static logToFile(msg : string,   errTop = null) : void{
 
     /*if(errTop)
       msg += `${errTop.name} \n`;*/
@@ -136,7 +136,7 @@ export default class Logger {
    *
    * @return
    * */
-  private static fileName(){
+  private static fileName() : string{
   
     return path.basename(__filename);
   }
