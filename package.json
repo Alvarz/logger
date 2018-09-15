@@ -1,5 +1,5 @@
 {
-  "name": "@bearded/logger",
+  "name": "bearded/logger",
   "version": "0.1.0",
   "description": "A great logger for bearded",
   "main": "index.js",
