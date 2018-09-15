@@ -1,6 +1,6 @@
 {
   "name": "@beardedframework/logger",
-  "version": "0.0.2",
+  "version": "0.0.5",
   "description": "a logger for bearded",
   "main": "dist/index.js",
   "scripts": {
@@ -16,7 +16,7 @@
     "node",
     "javascript"
   ],
-  "author": "Carlos Alvarez",
+  "author": "Carlos Alvarez <beardedframework@gmail.com>",
   "license": "ISC",
   "dependencies": {
     "@types/node": "7.0.22",

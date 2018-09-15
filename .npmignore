@@ -11,6 +11,7 @@ CVS
 npm-debug.log
 /node_modules
 /storage
+/src
 npm-debug.log
 .env
 *.swp

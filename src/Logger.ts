@@ -3,19 +3,34 @@ import * as fs from 'fs'
 
 export default class Logger {
 
-  private static logType : Array<any> = { 1 : 'ERROR', 2 : 'WARNING', 3: 'LOG'} 
+  /*
+   *
+   * @var Array the type if log
+   *
+   * */
+  private static logType : object = { 1 : 'ERROR', 2 : 'WARNING', 3: 'LOG'} 
 
+  /*
+   *
+   * @var string the path and filename to save the log
+   *
+   * */
   private static logPathAndFile : string = '../storage/bearded.log';
 
+  /*
+   *
+   * @var string the root path of the app
+   *
+   * */
   private static appDir : string = path.dirname(require.main.filename);
  
   /*
    *
-   * description
+   * The log of warning
    *
-   * @param
+   * @param string message
    *
-   * @return
+   * @return void
    * */
   public static warning (message : string) : void{
 
@@ -26,11 +41,11 @@ export default class Logger {
 
   /*
    *
-   * description
+   * The log of info
    *
-   * @param
+   * @param string message
    *
-   * @return
+   * @return void
    * */
   public static info (message : string) : void{
 
@@ -41,11 +56,11 @@ export default class Logger {
 
   /*
    *
-   * description
+   * The log of count
    *
-   * @param
+   * @param string lable
    *
-   * @return
+   * @return void
    * */
   public static count (label : string) : void{
 
@@ -55,11 +70,11 @@ export default class Logger {
   
   /*
    *
-   * description
+   * The log lod assert
    *
-   * @param
+   * @param string message
    *
-   * @return
+   * @return void
    * */
   public static assert (message : string) : void{
   
@@ -69,11 +84,12 @@ export default class Logger {
 
   /*
    *
-   * description
+   * The log of error
    *
-   * @param
+   * @param string message
+   * @param error err
    *
-   * @return
+   * @return void
    * */
   public static error (message : string,  err = null) : void{
 
@@ -95,11 +111,12 @@ export default class Logger {
 
   /*
    *
-   * description
+   * The log on file 
    *
-   * @param
+   * @param string message
+   * @param error errTOp
    *
-   * @return
+   * @return void
    * */
   private static logToFile(msg : string,   errTop = null) : void{
 
@@ -116,11 +133,12 @@ export default class Logger {
 
   /*
    *
-   * description
+   * message formatter
    *
-   * @param
+   * @param int logType
+   * @param string message
    *
-   * @return
+   * @return void
    * */
   private static msgFormatter(logType : int, message : string){
   
@@ -130,17 +148,13 @@ export default class Logger {
 
   /*
    *
-   * description
+   * name of the current file
    *
-   * @param
-   *
-   * @return
+   * @return string
    * */
   private static fileName() : string{
   
     return path.basename(__filename);
   }
-
-
 
 }
