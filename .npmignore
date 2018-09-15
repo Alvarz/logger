@@ -10,7 +10,6 @@ config.gypi
 CVS
 npm-debug.log
 /node_modules
-/dist
 /storage
 npm-debug.log
 .env
