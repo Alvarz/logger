@@ -16,7 +16,7 @@
     "node",
     "javascript"
   ],
-  "author": "Carlos Alvarez",
+  "author": "Carlos Alvarez <beardedframework@gmail.com>",
   "license": "ISC",
   "dependencies": {
     "@types/node": "7.0.22",
