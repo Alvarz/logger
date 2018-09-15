@@ -1,6 +1,6 @@
 import Logger from './Logger'
 
-export default Logger
+module export default Logger
 
 
 
