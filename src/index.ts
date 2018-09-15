@@ -1,4 +1,6 @@
-import Logger from './Logger'; 
+import Logger from './Logger';
+
+exports.Logger = Logger
 
 /*
 function getErrorObject(){
