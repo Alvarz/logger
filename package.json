@@ -1,7 +1,7 @@
 {
-  "name": "@beardedframework/logger",
+  "name": "@beardedframework/Logger",
   "version": "0.1.6",
-  "description": "A great logger for bearded",
+  "description": "",
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
