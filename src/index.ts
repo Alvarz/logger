@@ -1,11 +1,25 @@
-import app from './App'
+import Logger from './Logger'; 
 
-const port = process.env.APP_PORT || 3000
 
-app.listen(port, (err) => {
-  if (err) {
-    return console.log(err)
+function getErrorObject(){
+  try {
+    throw Error('') 
+  } catch(err) {
+    //return err;
+    Logger.error('the message', err);
   }
+}
 
-  return console.log(`server is listening on ${port}`)
-})
+function testLogger(){
+
+  //Logger.warning('the warning');
+  //Logger.error('the error');
+  //Logger.info('throught logger');
+  // Logger.count('testLogger');
+  getErrorObject();
+}
+
+testLogger();
+
+
+
