@@ -1,6 +1,6 @@
 import Logger from './Logger'
 
-exports.Logger = Logger
+export default = Logger
 
 
 
