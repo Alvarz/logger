@@ -1,4 +1,4 @@
-import Logger from './Logger'
+import Logger from './Logger';
 /**
  * Bearded Logger
  *
@@ -6,7 +6,5 @@ import Logger from './Logger'
  * @author   Carlos Alvarez <beardedframework@gmail.com>
  */
 
-module export default Logger
 
-
-
+module export default Logger;
