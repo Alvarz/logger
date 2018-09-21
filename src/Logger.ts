@@ -32,10 +32,16 @@ export default class Logger {
    *
    * @return void
    * */
-  public static warning (message : string) : void{
+  public static warning (...args) : void{
 
-    const msg = Logger.msgFormatter(2, message);
-    console.warn(msg.slice(0, -2));
+    console.log(args)
+    if(args.length > 1){
+      
+      args.unshift(Logger.logType[2])
+      console.warn(...args);
+      return
+    }
+    const msg = Logger.msgFormatter(2, args[0]);
     Logger.logToFile(msg);
   }
 
@@ -47,9 +53,15 @@ export default class Logger {
    *
    * @return void
    * */
-  public static info (message : string) : void{
+  public static info (...args) : void{
 
-    const msg = Logger.msgFormatter(3, message);
+    if(args.length > 1){
+      
+      args.unshift(Logger.logType[3])
+      console.log(...args);
+      return
+    }
+    const msg = Logger.msgFormatter(3, args[0]);
     console.log(msg.slice(0, -2));
     Logger.logToFile(msg);
   } 
@@ -91,14 +103,22 @@ export default class Logger {
    *
    * @return void
    * */
-  public static error (message : string,  err = null) : void{
+  public static error (...args) : void{
 
     //const caller_line = err.stack.split("\n")[4];
     //const index = caller_line.indexOf("at ");
     //const clean = caller_line.slice(index+2, caller_line.length);
     
-    const msg = Logger.msgFormatter(1, message);
-    
+    if(args.length > 1){
+      
+      args.unshift(Logger.logType[1])
+      console.error(...args);
+      return
+    }
+
+    const msg = Logger.msgFormatter(1, args[0]);
+
+    const err = args[err];
     if(err != null){
       console.error(msg.slice(0, -2), err);
       Logger.logToFile(msg, err);
