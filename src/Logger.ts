@@ -161,9 +161,11 @@ export default class Logger {
    * @return void
    * */
   private static msgFormatter(logType : int, message : string){
-  
-    return `${Logger.logType[logType]} | msg: ${message} | file: ${Logger.fileName()} \n`;
-  
+    
+    if(typeof message === 'object')
+      return `${Logger.logType[logType]} | msg: ${JSON.stringify(message} \n`;
+    
+    return `${Logger.logType[logType]} | msg: ${message} \n`;
   }
 
   /*
