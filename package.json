@@ -1,6 +1,6 @@
 {
   "name": "@beardedframework/logger",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "a logger for bearded",
   "main": "dist/index.js",
   "scripts": {
