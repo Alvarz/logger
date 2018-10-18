@@ -7,8 +7,4 @@ import Logger from './Logger';
  */
 
 
-module export default Logger;
-
-let ob = [{ 'the': 'object'},{ 'the': 'object'}, { 'the': 'object'}]
-
-Logger.info(ob);
+export default Logger;

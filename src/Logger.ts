@@ -38,7 +38,7 @@ export default class Logger {
     if(args.length > 1){
       
       args.unshift(Logger.logType[2])
-      console.warn(...args);
+      console.warn(args);
       return
     }
     const msg = Logger.msgFormatter(2, args[0]);
@@ -58,7 +58,7 @@ export default class Logger {
     if(args.length > 1){
       
       args.unshift(Logger.logType[3])
-      console.log(...args);
+      console.log(args);
       return
     }
     const msg = Logger.msgFormatter(3, args[0]);
@@ -112,13 +112,13 @@ export default class Logger {
     if(args.length > 1){
       
       args.unshift(Logger.logType[1])
-      console.error(...args);
+      console.error(args);
       return
     }
 
     const msg = Logger.msgFormatter(1, args[0]);
 
-    const err = args[err];
+    const err = args['err'];
     if(err != null){
       console.error(msg.slice(0, -2), err);
       Logger.logToFile(msg, err);
@@ -138,17 +138,17 @@ export default class Logger {
    *
    * @return void
    * */
-  private static logToFile(msg : string,   errTop = null) : void{
+  private static logToFile(msg : string,   errTop = null) : void {
 
     /*if(errTop)
       msg += `${errTop.name} \n`;*/
 
     fs.appendFile(`${Logger.appDir}/${Logger.logPathAndFile}`, msg, function(err) {
-        if(err) {
-            return console.error(Logger.logType[1], 'There was an error writing the file', err);
-        }
+      
+    if(err) 
+      console.error(Logger.logType[1], 'There was an error writing the file', err);
       //console.log(Logger.msgFormatter(3, 'log writed on file succefully'));
-    }
+    });
   }
 
   /*
@@ -160,10 +160,10 @@ export default class Logger {
    *
    * @return void
    * */
-  private static msgFormatter(logType : int, message : string){
+  private static msgFormatter(logType : number , message : string){
     
     if(typeof message === 'object')
-      return `${Logger.logType[logType]} | msg: ${JSON.stringify(message} \n`;
+      return `${Logger.logType[logType]} | msg: ${JSON.stringify(message)} \n`
     
     return `${Logger.logType[logType]} | msg: ${message} \n`;
   }
