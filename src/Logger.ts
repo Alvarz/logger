@@ -146,8 +146,9 @@ export default class Logger {
    * */
   private static logToFile(msg : string,   errTop = null) : void {
   
-    if(!mustLogToFile)
+    if(!this.mustLogToFile)
       return;
+
     /*if(errTop)
       msg += `${errTop.name} \n`;*/
 
