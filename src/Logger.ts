@@ -12,6 +12,12 @@ export default class Logger {
 
   /*
    *
+   * @var boolean file need to be created?
+   *
+   * */
+  private static mustLogToFile : boolean = false;
+  /*
+   *
    * @var string the path and filename to save the log
    *
    * */
@@ -139,7 +145,9 @@ export default class Logger {
    * @return void
    * */
   private static logToFile(msg : string,   errTop = null) : void {
-
+  
+    if(!mustLogToFile)
+      return;
     /*if(errTop)
       msg += `${errTop.name} \n`;*/
 
